@@ -32,4 +32,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print var
-        run: echo ${{ needs.bulds.outputs.var }}
+        run: echo ${{ needs.build.outputs.var }}
