@@ -5,10 +5,7 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  push:  
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,7 +21,5 @@ jobs:
     steps:
       - name: set var
         id: step1
-        run: ${{ github.ref_name }}
-    outputs:
-      var: echo ${{ steps.step1.outputs.test }}
-  
+        run: echo ${{ github.ref_name }}
+
