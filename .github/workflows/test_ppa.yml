@@ -24,12 +24,7 @@ jobs:
     steps:
       - name: set var
         id: step1
-        run: echo "::set-output name=test::hello"
+        run: ${{ github.ref_name }}
     outputs:
-      var: ${{ steps.step1.outputs.test }}
-  run:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: print var
-        run: echo ${{ needs.build.outputs.var }}
+      var: echo ${{ steps.step1.outputs.test }}
+  
